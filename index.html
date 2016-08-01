@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+		<script src="function.js"></script>
+		<script src="animate.js"></script>
+
+		<script>
+    $(function(){
+   		
+        var  one=$(".one")[0];
+        var lefts=$(".lef")[0];
+        var  rights=$(".righ")[0];
+        var  bottoms=$(".botto")[0];
+        var  tops=$(".to")[0];
+        var widths=one.offsetWidth;
+	    var heights=one.offsetHeight;
+
+         	one.onmouseover=function(){
+
+         		animate(lefts,{height:heights})
+         		animate(rights,{height:heights});
+		        animate(tops,{width:widths});
+		        animate(bottoms,{width:widths});
+         	}
+         	one.onmouseout=function(){
+
+         		animate(lefts,{height:0})
+         		animate(rights,{height:0});
+		        animate(tops,{width:0});
+		        animate(bottoms,{width:0});
+         	}
+    })
+
+
+
+		</script>
+</head>
+<body>
+<div class="one">
+	<div class="lef"></div>
+	<div class="righ"></div>
+	<div class="botto"></div>
+	<div class="to"></div>
+</div>
+</body>
+</html>
+<style>
+*{
+	margin: 0;
+	padding:0;
+	list-style: none
+}
+.lef{
+	height:0;
+	width:1px; 
+	position: absolute;
+	left: -1px;
+	bottom: -1px; 
+	background: red;
+}
+.botto{
+	height:1px;
+	width:0; 
+	position: absolute;
+	left: -1px;
+	bottom:-1px; 
+	background: red;
+}
+.to{
+	height:1px;
+	width:0; 
+	position: absolute;
+	right: -1px;
+	top: -1px; 
+	background: red;
+}
+.righ{
+	height:0;
+	width:1px; 
+	position: absolute;
+	right: -1px;
+	top: -1px; 
+	background: red;
+}
+.one{
+	height: 200px;
+	width: 200px;
+	margin: 40px auto;
+	background: pink;
+	border: 1px solid #ccc;
+	position: relative;
+}
+
+</style>
